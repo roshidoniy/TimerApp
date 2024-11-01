@@ -1,0 +1,72 @@
+@property --percentage {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+.timer-box{
+  background-color: #26273d;
+  padding: 20px 40px;
+  border-radius: 25px;
+}
+
+.circular-progress{
+  position: relative;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  text-align: center;
+  background: conic-gradient(#67cb88 var(--percentage, 0%), #545576 0%);
+  transition: --percentage 1s linear;
+}
+.circular-progress.done{
+  transition: background 1s linear;
+  background: #cb6767;
+}
+.box{
+  background-color: #26273d;
+  padding: 15%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  z-index: 100;
+}
+.gray-text{
+  color: #a2a4cb;
+}
+.action-buttons{
+  margin-top: 3rem;
+  display: flex;
+  gap: .5rem;
+  justify-content: space-evenly;
+}
+
+.action-buttons > button {
+  background: none;
+  outline: none;
+  border: 1px solid #545576;
+  padding: 8px 15px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 18px;
+  color: white;
+}
+.action-buttons > button:focus-visible {
+  outline: 2px solid olivedrab;
+}
+
+
+button:disabled,
+button[disabled]{
+  color: #666666;
+  cursor: default;
+  opacity: 0.4;  
+}
