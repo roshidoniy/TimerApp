@@ -10,16 +10,17 @@
   border-radius: 25px;
 }
 
-.circular-progress{
+.circle-progress{
   position: relative;
   height: 250px;
   width: 250px;
   border-radius: 50%;
   text-align: center;
-  background: conic-gradient(#67cb88 var(--percentage, 0%), #545576 0%);
-  transition: --percentage 1s linear;
+  background: conic-gradient(#67cb88 var(--percentage, 0%), #545576 0%); /* main clockwise animation feature */
+  transition: --percentage 1s linear; /* Smoothness */
 }
-.circular-progress.done{
+.circle-progress.done{
+  /* when circle-progress ends */
   transition: background 1s linear;
   background: #cb6767;
 }
@@ -59,14 +60,11 @@
   font-size: 18px;
   color: white;
 }
-.action-buttons > button:focus-visible {
-  outline: 2px solid olivedrab;
-}
-
-
-button:disabled,
-button[disabled]{
+.action-buttons > button:disabled{
   color: #666666;
   cursor: default;
   opacity: 0.4;  
+}
+.action-buttons > button:focus-visible {
+  outline: 2px solid olivedrab;
 }

@@ -11,10 +11,17 @@ export const useTimer = ({ endTime, elapsedTime = 0 }: UseTimerProps) => {
       if(endTime > 3599){
         throw new Error("Duration Limit")
       }
-      progressRef.current?.style.setProperty("--percentage", `${100 * elapsedTime / endTime}%`);
-  }, [endTime, elapsedTime]);
+      if(elapsedTime > 0){
+        progressRef.current?.style.setProperty("--percentage", `${100 * elapsedTime / endTime}%`);
+      }
+    }, [endTime, elapsedTime]);
 
   const startTimer = (): void => {
+    /**
+     * - Updates circle-progress and increases the duration by 1 every second
+     * - switch isRunning statement to true and stores the intervalID
+     * - if time passes, it clears the interval process
+     */
     if (!intervalID) {
       const myIntervalID = setInterval(() => {
         setDuration((prevDuration) => {
@@ -35,6 +42,9 @@ export const useTimer = ({ endTime, elapsedTime = 0 }: UseTimerProps) => {
   };
 
   const stopTimer = (): void => {
+    /**
+     * clears the interval, unset the intervalID, switches off the isRunning status
+     */
     if (intervalID) {
       clearInterval(intervalID);
       setIntervalID(undefined);
