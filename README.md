@@ -1,50 +1,90 @@
-# React + TypeScript + Vite
+# Smooth animated Timer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a VITE + REACT + TypeScript project.
 
-Currently, two official plugins are available:
+## Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Prerequisites
 
-## Expanding the ESLint configuration
+- [Node.js](https://nodejs.org/) (LTS version)
+- [npm](https://www.npmjs.com/) (LTS version)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Installation
 
-- Configure the top-level `parserOptions` property like this:
+1. Clone the repository:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+   ```bash
+   git clone https://github.com/roshidoniy/TimerApp.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd TimerApp
+   ```
+
+3. Install the dependencies:
+
+   ```bash
+   npm install
+   ```
+
+### Running the Development Server
+
+1. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+   This will start the development server and open the application in your default web browser.
+
+### Building the Project
+
+1. Build the production-ready assets:
+
+   ```bash
+   npm run build
+   ```
+
+   This will create an optimized, production-ready build in the `dist` folder.
+
+### Deployment
+
+You can deploy the contents of the `dist` folder to your hosting platform of choice.
+
+## Technologies Used
+
+- [VITE](https://vitejs.dev/) - A fast and opinionated build tool that serves as a frontend development tool.
+- [React](https://reactjs.org/) - A JavaScript library for building user interfaces.
+- [TypeScript](https://www.typescriptlang.org/) - A statically typed superset of JavaScript that compiles to plain JavaScript.
+
+## Project Structure
+
+The project structure is as follows:
+
+```
+TimerApp/
+├── src/
+│   ├── components/
+│   ├── hook/
+│   ├── types/
+│   ├── utils/
+│   ├── App.tsx
+│   └── main.tsx
+├── public/
+├── .gitignore
+├── index.html
+├── package.json
+├── tsconfig.json
+└── vite.config.ts
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Contributing
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Commit your changes.
+4. Push your branch to your forked repository.
+5. Submit a pull request.
