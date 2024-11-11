@@ -1,4 +1,4 @@
-# Smooth animated Timer
+# Smooth animated Timer ⏱️
 
 This is a VITE + REACT + TypeScript project.
 
